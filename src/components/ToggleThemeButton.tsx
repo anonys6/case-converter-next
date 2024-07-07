@@ -1,3 +1,4 @@
+import { SunMoon } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 
 function ToggleThemeButton() {
@@ -21,8 +22,18 @@ function ToggleThemeButton() {
 
     return (
         <div>
-            <button onClick={toggleTheme}>
-                Toggle Theme
+            <button style={
+                {
+                    backgroundColor: 'transparent',
+                    borderRadius: '50px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }
+
+            } onClick={toggleTheme}>
+                <SunMoon />
             </button>
         </div>
     )
