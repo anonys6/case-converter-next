@@ -1,0 +1,25 @@
+.textInput {
+    outline: none;
+    padding: 8px;
+    width: 100%;
+    background-color: var(--bg-2);
+    height: calc(100vh - 106px - 50px);
+    color: var(--text);
+}
+
+.controlContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 50px;
+}
+
+.container [contenteditable] {
+    padding: 12px;
+}
+
+.container [data-placeholder]:empty:before {
+    content: attr(data-placeholder);
+    color: var(--text-light);
+    font-style: italic;
+}

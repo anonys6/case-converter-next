@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 106px);
+}
+
+.inputDiv {
+    border-right: 1px solid var(--border);
+    width: 50%;
+}
+
+.outputDiv {
+    width: 50%;
+}
+

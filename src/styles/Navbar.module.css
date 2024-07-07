@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    height: 56px;
+}
+
+.navRight {
+    display: flex;
+    gap: 1rem;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navLinks li a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.container button {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--text);
+}
