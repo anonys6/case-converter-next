@@ -22,6 +22,7 @@ function CamelCasePage() {
             <div
                 className={styles.textOutput}
                 contentEditable="true"
+                data-placeholder="camelCase Output..."
             >
                 {camelCaseText}
             </div>

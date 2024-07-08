@@ -22,6 +22,7 @@ function KebabCasePage() {
             <div
                 className={styles.textOutput}
                 contentEditable="true"
+                data-placeholder="kebab-case Output..."
             >
                 {camelCaseText}
             </div>
