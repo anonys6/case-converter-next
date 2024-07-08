@@ -18,6 +18,7 @@ function CamelCasePage() {
             <div
                 className={styles.textOutput}
                 contentEditable="true"
+                data-placeholder="Sentence case Output..."
             >
                 {camelCaseText}
             </div>
