@@ -13,9 +13,19 @@ function Hamburger() {
 
     return (
         <div className={styles.container}>
-            <Menu className={styles.hamIcon}
+            {/* <Menu className={styles.hamIcon}
                 onClick={handleClick}
-            />
+            /> */}
+            <label className={styles.burger} htmlFor="burger">
+                <input
+                    type="checkbox"
+                    id="burger"
+                    onChange={handleClick}
+                />
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
             <ul className={styles.hamburgerDropdown}>
                 <li><Link href="/">Home</Link></li>
