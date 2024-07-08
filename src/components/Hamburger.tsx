@@ -2,7 +2,7 @@
 
 import React from 'react'
 import styles from '@/styles/Hamburger.module.css';
-import { Menu } from 'lucide-react';
+import { ArrowUpRight, Menu } from 'lucide-react';
 import Link from 'next/link';
 
 function Hamburger() {
@@ -22,6 +22,7 @@ function Hamburger() {
                 <li><Link href="/camel-case">camelCase</Link></li>
                 <li><Link href="/kebab-case">kebab-case</Link></li>
                 <li><Link href="/pascal-case">PascalCase</Link></li>
+                <li><Link href="https://www.advancedtexteditor.com/">Advanced Text Editor <ArrowUpRight /></Link></li>
             </ul>
         </div>
     )

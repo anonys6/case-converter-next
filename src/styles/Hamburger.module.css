@@ -4,19 +4,16 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: -20px;
+    left: -70px;
     width: 150px;
     background-color: var(--bg-2);
     box-shadow: 0 0 10px var(--shadow);
     z-index: 100;
     color: var(--text-light);
     transition: all 0.3s;
-}
-
-.hamburgerDropdown {
     list-style: none;
-    padding: 0;
-    margin: 0;
+
+    border-radius: 5px;
 }
 
 .hamburgerDropdown li {

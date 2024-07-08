@@ -2,6 +2,7 @@ import styles from '@/styles/Navbar.module.css';
 import Link from 'next/link';
 import ToggleContainer from './ToggleContainer';
 import Hamburger from './Hamburger';
+import { ArrowUpRight } from 'lucide-react';
 
 function Navbar() {
 
@@ -22,6 +23,8 @@ function Navbar() {
                     <li><Link href="/camel-case">camelCase</Link></li>
                     <li><Link href="/kebab-case">kebab-case</Link></li>
                     <li><Link href="/pascal-case">PascalCase</Link></li>
+                    <li><Link className={styles.advancedLink} href="https://www.advancedtexteditor.com/">Advanced Text Editor<ArrowUpRight /></Link></li>
+
                 </ul>
                 <ToggleContainer />
             </div>
