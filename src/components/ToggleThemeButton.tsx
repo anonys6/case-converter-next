@@ -1,16 +1,19 @@
 import { SunMoon } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import styles from '@/styles/ToggleThemeButton.module.css';
-
+import '@/app/globals.css';
 function ToggleThemeButton() {
     const [theme, setTheme] = useState('light');
 
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
         if (storedTheme) {
-            if (storedTheme === 'dark') {
+            if (storedTheme === 'dark' || document.documentElement.getAttribute('data-theme') === "dark") {
                 (document.getElementsByClassName(styles.input)[0] as HTMLInputElement).checked = true;
+            } else if (storedTheme === 'light' || document.documentElement.getAttribute('data-theme') === "light") {
+                (document.getElementsByClassName(styles.input)[0] as HTMLInputElement).checked = false;
             }
+
             setTheme(storedTheme);
             document.documentElement.setAttribute('data-theme', storedTheme);
         }

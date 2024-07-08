@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    hello: hi;
 }
 
 body {
@@ -16,20 +17,20 @@ a {
     color: var(--text);
 }
 
-:root[data-theme="dark"] {
-    --bg: #09090b;
-    --bg-2: #111113;
-    --text: #f9f9f9;
-    --text-light: #ccc;
-    --border: #333;
-    --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 :root[data-theme="light"] {
     --bg: #f9f9f9;
     --bg-2: #fff;
     --text: #333;
     --text-light: #666;
     --border: #ccc;
+    --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"] {
+    --bg: #09090b;
+    --bg-2: #111113;
+    --text: #f9f9f9;
+    --text-light: #ccc;
+    --border: #333;
     --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
