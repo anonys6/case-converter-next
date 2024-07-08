@@ -1,20 +1,30 @@
+// src/components/TextInput.tsx
 'use client';
 
 import styles from '@/styles/TextInput.module.css';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { useText } from '@/context/TextContext';
 
 function TextInput() {
+    const { text, setText } = useText();
     const textInputRef = useRef<HTMLDivElement>(null);
 
+    // useEffect(() => {
+    //     if (textInputRef.current) {
+    //         textInputRef.current.innerText = text;
+    //     }
+    // }, [text]);
+
     function handleInput() {
-        const text = textInputRef.current?.innerText;
-        console.log(text);
+        const text = textInputRef.current?.innerText || '';
+        setText(text);
     }
 
     function handleClear() {
         if (textInputRef.current) {
-            textInputRef.current.innerText = "";
+            textInputRef.current.innerText = '';
         }
+        setText('');
     }
 
     return (
@@ -37,4 +47,4 @@ function TextInput() {
     )
 }
 
-export default TextInput
+export default TextInput;

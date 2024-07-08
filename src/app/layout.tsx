@@ -1,3 +1,5 @@
+// src/app/layout.tsx
+import { TextProvider } from '@/context/TextContext';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
@@ -21,12 +23,14 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Navbar />
-                <div className={styles.container}>
-                    <div className={styles.inputDiv}><TextInput /></div>
-                    <div className={styles.outputDiv}>{children}</div>
-                </div>
-                <Footer />
+                <TextProvider>
+                    <Navbar />
+                    <div className={styles.container}>
+                        <div className={styles.inputDiv}><TextInput /></div>
+                        <div className={styles.outputDiv}>{children}</div>
+                    </div>
+                    <Footer />
+                </TextProvider>
             </body>
         </html>
     );

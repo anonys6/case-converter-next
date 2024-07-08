@@ -8,6 +8,12 @@
     height: 56px;
 }
 
+.container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 .navRight {
     display: flex;
     gap: 2rem;

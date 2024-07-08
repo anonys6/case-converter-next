@@ -3,17 +3,15 @@
 import { useText } from '@/context/TextContext';
 import styles from '@/styles/OutputDiv.module.css';
 
-function toCamelCase(text: string): string {
-    return text.split(' ').map((word, index) => index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join('');
+function toSentenceCase(text: string): string {
+    return text
+        .toLowerCase()
+        .replace(/(^[\s]*\w|[.!?]\s*\w|\n\s*\w)/g, c => c.toUpperCase())
 }
 
 function CamelCasePage() {
     const { text } = useText();
-    const camelCaseText = toCamelCase(text);
-
-    const handleClear = () => {
-        
-    }
+    const camelCaseText = toSentenceCase(text);
 
     return (
         <div className={styles.container}>
@@ -27,9 +25,7 @@ function CamelCasePage() {
             <div className={styles.controlContainer}>
                 <button
                     className={styles.button}
-                    onClick={handleClear}
                 >Clear</button>
-
             </div>
         </div>
     )
