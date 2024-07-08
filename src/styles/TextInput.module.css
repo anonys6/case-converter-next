@@ -33,3 +33,17 @@
     font-style: italic;
     font-size: 14px;
 }
+
+@media screen and (max-width: 768px){
+    .textInput {
+        height: calc(50vh - 50px - 50px);
+    }
+    
+    .controlContainer {
+        height: 50px;
+    }
+    
+    .controlContainer button {
+        padding: 0 0.5rem;
+    }    
+}

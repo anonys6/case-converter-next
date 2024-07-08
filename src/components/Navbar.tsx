@@ -1,6 +1,7 @@
 import styles from '@/styles/Navbar.module.css';
 import Link from 'next/link';
 import ToggleContainer from './ToggleContainer';
+import Hamburger from './Hamburger';
 
 function Navbar() {
 
@@ -11,6 +12,11 @@ function Navbar() {
             </Link>
 
             <div className={styles.navRight}>
+
+                {/* max-width: 640px */}
+                <div className={styles.hamburger}>
+                    <Hamburger />
+                </div>
 
                 <ul className={styles.navLinks}>
                     <li><Link href="/camel-case">camelCase</Link></li>

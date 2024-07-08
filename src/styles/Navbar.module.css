@@ -11,6 +11,7 @@
 .navRight {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .navLinks {
@@ -31,4 +32,19 @@
     padding: 0.5rem 1rem;
     cursor: pointer;
     color: var(--text);
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    .navLinks {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
 }

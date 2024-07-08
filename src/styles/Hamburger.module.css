@@ -1,0 +1,49 @@
+
+
+.hamburgerDropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 150px;
+    background-color: var(--bg-2);
+    box-shadow: 0 0 10px var(--shadow);
+    z-index: 100;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
+
+.hamburgerDropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hamburgerDropdown li {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.hamburgerDropdown li a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.hamburgerDropdown li a:hover {
+    color: #0070f3;
+}
+
+.hamburgerDropdown li:last-child {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 640px) {
+    .show {
+        display: block;
+    }
+}
+
+
+.container {
+    position: relative;
+}

@@ -13,3 +13,21 @@
     width: 50%;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .inputDiv {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        width: 100%;
+        height: 50%;
+    }
+
+    .outputDiv {
+        width: 100%;
+        height: 50%;
+    }
+    
+}
