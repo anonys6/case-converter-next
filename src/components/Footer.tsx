@@ -1,4 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import styles from '@/styles/Footer.module.css';
 
-export default nextConfig;
+function Footer() {
+    return (
+        <div className={styles.container}>
+            <p>All rights reserved © Case Converter</p>
+        </div>
+    )
+}
+
+export default Footer
