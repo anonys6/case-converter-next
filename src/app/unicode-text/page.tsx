@@ -4,19 +4,19 @@ import { useText } from "@/context/TextContext";
 import styles from "@/styles/OutputDiv.module.css";
 import { BsCopy } from "react-icons/bs";
 
-function toPascalCase(text: string): string {
+function toUnicodeText(text: string): string {
     return text
-        .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .split("")
+        .map((char) => `&#${char.charCodeAt(0)};`)
         .join("");
 }
 
-function PascalCasePage() {
+function UnicodeTextPage() {
     const { text } = useText();
-    let pascalCaseText = toPascalCase(text);
+    let unicodeText = toUnicodeText(text);
 
     const handleClear = () => {
-        pascalCaseText = "";
+        unicodeText = "";
     };
 
     return (
@@ -24,9 +24,9 @@ function PascalCasePage() {
             <div
                 className={styles.textOutput}
                 contentEditable="true"
-                data-placeholder="PascalCase Output..."
+                data-placeholder="UNICODE TEXT Output..."
             >
-                {pascalCaseText}
+                {unicodeText}
             </div>
 
             <div className={styles.controlContainer}>
@@ -35,7 +35,7 @@ function PascalCasePage() {
                 </button>
                 <button
                     className={styles.button}
-                    onClick={() => navigator.clipboard.writeText(pascalCaseText)}
+                    onClick={() => navigator.clipboard.writeText(unicodeText)}
                 >
                     <BsCopy />
                 </button>
@@ -44,4 +44,4 @@ function PascalCasePage() {
     );
 }
 
-export default PascalCasePage;
+export default UnicodeTextPage;

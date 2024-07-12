@@ -1,14 +1,18 @@
-'use client';
+"use client";
 
-import { useText } from '@/context/TextContext';
-import styles from '@/styles/OutputDiv.module.css';
-import { Copy } from 'lucide-react';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Image from 'next/image';
-import { BsCopy } from 'react-icons/bs';
+import { useText } from "@/context/TextContext";
+import styles from "@/styles/OutputDiv.module.css";
+import { BsCopy } from "react-icons/bs";
 
 function toCamelCase(text: string): string {
-    return text.split(' ').map((word, index) => index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join('');
+    return text
+        .split(" ")
+        .map((word, index) =>
+            index === 0
+                ? word.toLowerCase()
+                : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
+        )
+        .join("");
 }
 
 function CamelCasePage() {
@@ -16,8 +20,8 @@ function CamelCasePage() {
     let camelCaseText = toCamelCase(text);
 
     const handleClear = () => {
-        camelCaseText = '';
-    }
+        camelCaseText = "";
+    };
 
     return (
         <div className={styles.container}>
@@ -30,20 +34,18 @@ function CamelCasePage() {
             </div>
 
             <div className={styles.controlContainer}>
-                <button
-                    className={styles.button}
-                    onClick={handleClear}
-                >Clear</button>
+                <button className={styles.button} onClick={handleClear}>
+                    Clear
+                </button>
                 <button
                     className={styles.button}
                     onClick={() => navigator.clipboard.writeText(camelCaseText)}
                 >
                     <BsCopy />
                 </button>
-
             </div>
         </div>
-    )
+    );
 }
 
 export default CamelCasePage;

@@ -4,6 +4,7 @@ import React from 'react'
 import styles from '@/styles/Hamburger.module.css';
 import { ArrowUpRight, Menu } from 'lucide-react';
 import Link from 'next/link';
+import NavbarLinks from './NavbarLinks';
 
 function Hamburger() {
     const handleClick = () => {
@@ -28,11 +29,7 @@ function Hamburger() {
             </label>
 
             <ul className={styles.hamburgerDropdown}>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/camel-case">camelCase</Link></li>
-                <li><Link href="/kebab-case">kebab-case</Link></li>
-                <li><Link href="/pascal-case">PascalCase</Link></li>
-                <li><Link href="https://www.advancedtexteditor.com/">Advanced Text Editor <ArrowUpRight /></Link></li>
+                <NavbarLinks />
             </ul>
         </div>
     )

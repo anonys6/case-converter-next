@@ -3,19 +3,13 @@
 import { useText } from '@/context/TextContext';
 import styles from '@/styles/OutputDiv.module.css';
 
-function toCamelCase(text: string): string {
-    return text.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) =>
-        index === 0 ? match.toLowerCase() : match.toUpperCase()
-    ).replace(/\s+/g, '');
-}
-
 function toKebabCase(text: string): string {
     return text.split('\n').map(line => line.toLowerCase().replace(/\s+/g, '-')).join('\n');
 }
 
 function KebabCasePage() {
     const { text } = useText();
-    const camelCaseText = toKebabCase(text);
+    const kebabCaseText = toKebabCase(text);
 
     return (
         <div className={styles.container}>
@@ -24,7 +18,7 @@ function KebabCasePage() {
                 contentEditable="true"
                 data-placeholder="kebab-case Output..."
             >
-                {camelCaseText}
+                {kebabCaseText}
             </div>
 
             <div className={styles.controlContainer}>

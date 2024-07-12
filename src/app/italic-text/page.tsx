@@ -4,29 +4,27 @@ import { useText } from "@/context/TextContext";
 import styles from "@/styles/OutputDiv.module.css";
 import { BsCopy } from "react-icons/bs";
 
-function toPascalCase(text: string): string {
-    return text
-        .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-        .join("");
-}
-
-function PascalCasePage() {
+function ItalicTextPage() {
     const { text } = useText();
-    let pascalCaseText = toPascalCase(text);
+    let italicText = text;
 
     const handleClear = () => {
-        pascalCaseText = "";
+        italicText = "";
     };
 
     return (
         <div className={styles.container}>
             <div
+                style={
+                    {
+                        fontStyle: "italic"
+                    }
+                }
                 className={styles.textOutput}
                 contentEditable="true"
-                data-placeholder="PascalCase Output..."
+                data-placeholder="italic text Output..."
             >
-                {pascalCaseText}
+                {italicText}
             </div>
 
             <div className={styles.controlContainer}>
@@ -35,13 +33,13 @@ function PascalCasePage() {
                 </button>
                 <button
                     className={styles.button}
-                    onClick={() => navigator.clipboard.writeText(pascalCaseText)}
+                    onClick={() => navigator.clipboard.writeText(italicText)}
                 >
                     <BsCopy />
                 </button>
             </div>
-        </div>
+        </div >
     );
 }
 
-export default PascalCasePage;
+export default ItalicTextPage;
