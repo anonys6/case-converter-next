@@ -2,7 +2,7 @@ import styles from '@/styles/Navbar.module.css';
 import Link from 'next/link';
 import ToggleContainer from './ToggleContainer';
 import Hamburger from './Hamburger';
-import { ArrowUpRight, SquarePen } from 'lucide-react';
+import { SquarePen } from 'lucide-react';
 import NavbarLinks from './NavbarLinks';
 
 function Navbar() {

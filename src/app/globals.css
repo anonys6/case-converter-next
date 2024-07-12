@@ -32,4 +32,9 @@ a {
     --text-light: #ccc;
     --border: #333;
     --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --bg-nav: rgba(33, 42, 51, .9);
+}
+
+:root[data-theme="light"] {
+    --bg-nav: navrgba(255, 255, 255, .9);
 }
