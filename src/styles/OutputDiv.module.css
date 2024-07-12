@@ -21,6 +21,7 @@
     padding: 0 1rem;
     cursor: pointer;
     color: var(--text);
+    font-size: 14px;
 }
 
 .container [contenteditable] {
@@ -32,4 +33,22 @@
     color: var(--text-light);
     font-style: italic;
     font-size: 14px;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .textOutput {
+        height: calc(50vh - 50px - 50px);
+    }
+
+    .controlContainer {
+        height: 50px;
+    }
+
+    .controlContainer button {
+        padding: 0 0.5rem;
+    }
 }
