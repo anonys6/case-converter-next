@@ -16,11 +16,11 @@ function toCamelCase(text: string): string {
 }
 
 function CamelCasePage() {
-    const { text } = useText();
-    let camelCaseText = toCamelCase(text);
+    const { text, setText } = useText();
+    let camelCaseText = toCamelCase(text).replace(/\n/g, '<br />');
 
     const handleClear = () => {
-        camelCaseText = "";
+        setText("");
     };
 
     return (
@@ -29,17 +29,15 @@ function CamelCasePage() {
                 className={styles.textOutput}
                 contentEditable="true"
                 data-placeholder="camelCase Output..."
-            >
-                {camelCaseText}
-            </div>
-
+                dangerouslySetInnerHTML={{ __html: camelCaseText }}
+            />
             <div className={styles.controlContainer}>
                 <button className={styles.button} onClick={handleClear}>
                     Clear
                 </button>
                 <button
                     className={styles.button}
-                    onClick={() => navigator.clipboard.writeText(camelCaseText)}
+                    onClick={() => navigator.clipboard.writeText(text)}
                 >
                     <BsCopy />
                 </button>

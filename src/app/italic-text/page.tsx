@@ -5,40 +5,34 @@ import styles from "@/styles/OutputDiv.module.css";
 import { BsCopy } from "react-icons/bs";
 
 function ItalicTextPage() {
-    const { text } = useText();
-    let italicText = text;
+    const { text, setText } = useText();
+    let italicText = text.replace(/\n/g, '<br />');
 
     const handleClear = () => {
-        italicText = "";
+        setText("");
     };
 
     return (
         <div className={styles.container}>
             <div
-                style={
-                    {
-                        fontStyle: "italic"
-                    }
-                }
+                style={{ fontStyle: "italic" }}
                 className={styles.textOutput}
                 contentEditable="true"
                 data-placeholder="italic text Output..."
-            >
-                {italicText}
-            </div>
-
+                dangerouslySetInnerHTML={{ __html: italicText }}
+            />
             <div className={styles.controlContainer}>
                 <button className={styles.button} onClick={handleClear}>
                     Clear
                 </button>
                 <button
                     className={styles.button}
-                    onClick={() => navigator.clipboard.writeText(italicText)}
+                    onClick={() => navigator.clipboard.writeText(text)}
                 >
                     <BsCopy />
                 </button>
             </div>
-        </div >
+        </div>
     );
 }
 

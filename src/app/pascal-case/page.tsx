@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useText } from "@/context/TextContext";
 import styles from "@/styles/OutputDiv.module.css";
@@ -8,15 +8,16 @@ function toPascalCase(text: string): string {
     return text
         .split(" ")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-        .join("");
+        .join("")
+        .replace(/\n/g, '<br />');
 }
 
 function PascalCasePage() {
-    const { text } = useText();
+    const { text, setText } = useText();
     let pascalCaseText = toPascalCase(text);
 
     const handleClear = () => {
-        pascalCaseText = "";
+        setText("");
     };
 
     return (
@@ -25,17 +26,15 @@ function PascalCasePage() {
                 className={styles.textOutput}
                 contentEditable="true"
                 data-placeholder="PascalCase Output..."
-            >
-                {pascalCaseText}
-            </div>
-
+                dangerouslySetInnerHTML={{ __html: pascalCaseText }}
+            />
             <div className={styles.controlContainer}>
                 <button className={styles.button} onClick={handleClear}>
                     Clear
                 </button>
                 <button
                     className={styles.button}
-                    onClick={() => navigator.clipboard.writeText(pascalCaseText)}
+                    onClick={() => navigator.clipboard.writeText(text)}
                 >
                     <BsCopy />
                 </button>

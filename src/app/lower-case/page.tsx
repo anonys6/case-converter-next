@@ -5,16 +5,16 @@ import styles from '@/styles/OutputDiv.module.css';
 import { BsCopy } from 'react-icons/bs';
 
 function toLowerCase(text: string): string {
-    return text.toLowerCase();
+    return text.toLowerCase().replace(/\n/g, '<br />');
 }
 
 function LowerCasePage() {
-    const { text } = useText();
+    const { text, setText } = useText();
     let lowerCaseText = toLowerCase(text);
 
     const handleClear = () => {
-        lowerCaseText = '';
-    }
+        setText("");
+    };
 
     return (
         <div className={styles.container}>
@@ -22,25 +22,21 @@ function LowerCasePage() {
                 className={styles.textOutput}
                 contentEditable="true"
                 data-placeholder="lower case Output..."
-            >
-                {lowerCaseText}
-            </div>
-
+                dangerouslySetInnerHTML={{ __html: lowerCaseText }}
+            />
             <div className={styles.controlContainer}>
+                <button className={styles.button} onClick={handleClear}>
+                    Clear
+                </button>
                 <button
                     className={styles.button}
-                    onClick={handleClear}
-                >Clear</button>
-                <button
-                    className={styles.button}
-                    onClick={() => navigator.clipboard.writeText(lowerCaseText)}
+                    onClick={() => navigator.clipboard.writeText(text)}
                 >
                     <BsCopy />
                 </button>
-
             </div>
         </div>
-    )
+    );
 }
 
 export default LowerCasePage;

@@ -5,6 +5,8 @@
     background-color: var(--bg-2);
     height: calc(100vh - 106px - 50px);
     color: var(--text);
+    overflow-y: auto; /* Add this line */
+    white-space: pre-wrap; /* Add this line to preserve whitespace */
 }
 
 .controlContainer {
