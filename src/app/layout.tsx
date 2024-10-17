@@ -8,6 +8,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import TextInput from "@/components/TextInput";
 import Script from 'next/script';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" data-theme="light">
+            <GoogleAnalytics />
             <body className={inter.className}>
                 {/* Metadata script */}
                 <Script type="application/ld+json" id="json-ld">
